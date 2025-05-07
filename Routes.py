@@ -9,8 +9,8 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///HomeTrack.db'
 db.init_app(app)
 date_format='%D/%M/%Y'
 # יצירת טבלת הנתונים בפעם הראשונה
-# with app.app_context():
-#     db.create_all()
+with app.app_context():
+    db.create_all()
 
 # הגדרת ניתוב לפונקציה
 @app.route('/')
@@ -65,8 +65,11 @@ def delete(id):
     return redirect(url_for('profile'))
 
 
-@app.route('/add_purchase',methods=['POST'])
-def add_purchase():
+@app.route('/add_purchase/<int:id>',methods=['GET','POST'])
+def add_purchase(id):
+    if request.method == 'GET':
+        purchases_from_db=Purchase.query.filter_by().all()
+        return render_template('add_purchase.html',purchases=purchases_from_db)
     product_name=request.form['product_name']
     quantity = request.form['quantity']
     price = request.form['price']
@@ -77,8 +80,7 @@ def add_purchase():
     new_purchase = Purchase(product_name=product_name,quantity=quantity,price=price,category=category,date=date_obj)
     db.session.add(new_purchase)
     db.session.commit()
-    # purchases=Purchase.query.filter_by(user_id=)
-    return render_template('/')
+    return redirect('/')
 
 
 if __name__ == "__main__":
