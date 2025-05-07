@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <a href="/">×</a>
+    <form action="/add_purchase" method="post">
+        <label for="product_name">Product name</label><br>
+        <input type="text" id="product_name" name="product_name" value="a"><br>
+
+        <label for="quantity">Quantity</label><br>
+        <input type="number" id="quantity" name="quantity" value="1"><br>
+
+        <label for="price">Price</label><br>
+        <input type="number" id="price" name="price" step="0.01" value="0.01"><br>
+
+        <label for="date">Date</label><br>
+        <input type="date" id="date" name="date" value="01/07/2005"><br>
+
+        <button>Add</button>
+    </form>
+</div>
+{% endblock %}

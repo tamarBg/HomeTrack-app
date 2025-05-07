@@ -1,0 +1,86 @@
+
+/* סגנון למיכל הראשי של הדף */
+.container {
+    display: flex;                 /* שימוש ב-Flexbox */
+    flex-direction: column;       /* סידור אנכי של הילדים */
+    justify-content: center;      /* ממרכז את הילדים אנכית */
+    align-items: center;          /* ממרכז את הילדים אופקית */
+    min-height: 100vh;            /* גובה מלא של הדף */
+    padding: 20px;                /* ריווח פנימי כללי */
+    box-sizing: border-box;       /* כולל padding בגובה ורוחב */
+}
+/* מגדיר שה־header יהיה צמוד לחלק העליון של הדף */
+.header {
+    position: fixed; /* מצמיד את האלמנט למסך */
+    left: 0; /* מתחיל מהצד השמאלי */
+    width: 100%; /* תופס את כל רוחב המסך */
+    z-index: 1000; /* מוודא שה-header יופיע מעל אלמנטים אחרים */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* צל עדין מתחת ל-header */
+}
+
+/* ממרכז את התוכן בתוך ההדר ומוסיף ריווח */
+.header-container {
+    display: flex; /* מאפשר סידור אופקי של התוכן */
+    align-items: center; /* מיישר אנכית למרכז */
+    justify-content: center; /* ממרכז אופקית את התוכן */
+    padding: 10px 0; /* ריווח אנכי בתוך ההדר */
+}
+
+/* מגדיר סגנון לקישור עצמו */
+.header-logo {
+    display: inline-block;
+}
+
+/* מקטין את התמונה שבתוך הקישור */
+.header-logo img {
+    height: 40px; /* גובה התמונה ב־px */
+    width: auto; /* הרוחב משתנה לפי הגובה, שומר על פרופורציות */
+}
+
+/* form */
+.title-form{
+    color: white;
+    font-size: larger;
+    display: contents;
+}
+/* מגדיר את מבנה הטופס */
+.form {
+    background-color: rgb(255, 255, 255);
+    margin: auto;
+    width: 250px;
+    padding: 10px;               /* ריווח פנימי */
+    border-radius: 4px;          /* פינות מעוגלות */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* צל עדין */
+    max-width: 400px;            /* רוחב מקסימלי כדי שלא יהיה רחב מדי */
+}
+
+/* ריווח בין חלקי הטופס */
+.title-form, .form-body, .footer-form , .header{
+    margin: auto;
+}
+/* עיצוב כללי לשדות */
+input {
+    width: -webkit-fill-available;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* עיצוב כפתור */
+button {
+    width: -webkit-fill-available;
+    padding: 10px;
+    margin: auto;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* כפתור בהובר */
+button:hover {
+    background-color: #0056b3;
+}
+

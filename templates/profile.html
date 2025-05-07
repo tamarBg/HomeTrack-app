@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="../static/css/profile.css">
+<!-- <link rel="stylesheet" href="../static/css/a.css"> -->
+
+<div class="div-nav">
+    <h3 class="wellcom">Wellcom {{user.username}}</h3>
+    <img src="../static/images/system-solid-68-savings-hover-pig2.gif" alt="GIF">
+
+</div>
+{% endblock%}
+
+{% block body %}
+
+<div class="container">
+    <h1>Your purchases</h1>
+    {% if purchases|length < 1 %} <h4>You don't have purchases, Create now!</h4>
+        {% else %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Category</th>
+                    <th>Date</th>
+                    <th>delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for p in purchases%}
+                <tr>
+                    <td>{{p.product_name}}</td>
+                    <td>{{p.quantity}}</td>
+                    <td>{{p.price}}</td>
+                    <td>{{p.category}}</td>
+                    <td>{{p.date}}</td>
+                    <td>×</td>
+                </tr>
+                {% endfor %}
+                {% endif %}
+            </tbody>
+        </table>
+        <a href="/add_purchase">add</a>
+</div>
+<!-- 
+<div class="content">
+    <div class="purchases-box">
+        <div class="purchases-list">
+            <h3 class="title your-purchases">Your purchases</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Category</th>
+                        <th>Date</th>
+                        <th>delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for p in purchases%}
+                    <tr>
+                        <td>{{p.product_name}}</td>
+                        <td>{{p.quantity}}</td>
+                        <td>{{p.price}}</td>
+                        <td>{{p.category}}</td>
+                        <td>{{p.date}}</td>
+                        <td>×</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <a href="#addPurchase" class="add-purchase a">add</a>
+
+        <div id="addPurchase" class="purchase-add">
+            <div class="purchase-add-content">
+                <a class="close-add" href="#">&times;</a>
+                <form action="/add_purchase" method="post">
+                    <input type="text" name="product_name" placeholder="product_name" value="a"><br>
+                    <input type="number" name="quantity" placeholder="quantity" value="1"><br>
+                    <input type="number" name="price" placeholder="price" step="0.01" value="0.01"><br>
+                    <input type="text" name="category" placeholder="category" value="A"><br>
+                    <input type="date" name="date" placeholder="date"><br>
+                    <button>Add</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div> -->
+{% endblock %}

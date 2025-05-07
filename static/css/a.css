@@ -1,0 +1,47 @@
+/* מיישם על כל הדף */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* גובה מלא של המסך */
+    display: flex;
+    justify-content: center; /* מרכז אופקית */
+    align-items: center;     /* מרכז אנכית */
+    background-color: #f0f2f5; /* צבע רקע עדין */
+    font-family: Arial, sans-serif;
+}
+
+/* הקופסה המרכזית */
+.container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    width: 300px;
+    text-align: center;
+}
+
+/* עיצוב שדות קלט */
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+/* עיצוב כפתור */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}

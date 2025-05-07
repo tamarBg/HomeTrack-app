@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="../static/css/login.css">
+{% endblock%}
+
+{% block body %}
+    <div>
+        <div class="header">
+            <a class="header-logo" href="index.html"><img
+                    src="{{ url_for('static', filename='images/system-solid-68-savings-hover-pig.gif') }}"
+                    alt="GIF"></a>
+        </div>
+    </div>
+    <div>
+        <div class="title-form">
+            <p>Sign in to HomeTrack</p>
+        </div>
+    </div>
+
+    <div>
+        <div class="form">
+            <form action="/login" method="post">
+                <label for="email">Email</label><br>
+                <input type="email" name="email" placeholder="email" value="tamar5816@gmail.com"><br>
+                <label for="password">Password</label><br>
+                <input type="password" name="password" placeholder="password" value="147"><br>
+                <button>Login</button>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <div class="footer-form">
+            <p>New to HomeTrack? <a href="/register">Create an account</a></p>
+        </div>
+     </div>
+{% endblock %}

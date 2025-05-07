@@ -1,0 +1,130 @@
+.div-nav {
+    display: flex;
+    align-items: center;
+    /* justify-content: flex-start; */
+}
+
+.wellcom {
+    color: white;
+    padding-left: 20px;
+}
+
+img {
+    width: 40px;
+    padding-left: 4px;
+}
+
+.title.your-purchases {
+    font-weight: 400;
+    font-size: xx-large;
+    color: white;
+    justify-self: center;
+}
+
+.purchases-box {
+    display: flex;
+    flex-direction: column;
+}
+
+div {
+    padding: 5px;
+}
+
+div.purchase-list {
+    align-items: flex-end;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    margin: 20px;
+    background-color:  hwb(222deg 18.43% 73.73%);
+}
+
+div.purchase-add {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+th,
+td {
+    padding: 12px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+th {
+    background-color: #f0f0f0;
+}
+
+tr:hover {
+    background-color: #f9f9f9;
+}
+/* ============================================== */
+/* בהתחלה מוסתר */
+.purchase-add {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 1000;
+}
+
+/* כשמגיעים לעוגן addPurchase – מוצג */
+:target.purchase-add {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* עיצוב לתוכן עצמו */
+.purchase-add-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    position: relative;
+    width: 90%;
+    max-width: 400px;
+}
+
+/* כפתור סגירה */
+.close-add {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 2rem;
+    text-decoration: none;
+    color: black;
+}
+
+
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('fonts/Roboto-Black.ttf')format('ttf');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('fonts/Roboto-Bold.ttf')format('ttf');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('fonts/Roboto-Regular.ttf')format('ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('fonts/Roboto-Thin.ttf')format('ttf');
+    font-weight: 100;
+    font-style: normal;
+}
